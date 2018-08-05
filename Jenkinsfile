@@ -13,9 +13,10 @@ pipeline {
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
-        stage('Jenkins Scripts') {
+        stage('Tag') {
             steps {
-                echo 'Call some Jenkins scripts here'
+                echo 'Tagging release'
+                tagDeployment("cicd-pipeline-train-schedule-jenkins")
             }
         }
     }
